@@ -29,17 +29,16 @@ namespace WSTower.Controllers
             }
         }
 
-       /* [HttpGet("estadio")]
-       // [Route("Jogo/{estadio}")]
+        [HttpGet("Estadio/{estadio}")]
         public IActionResult BuscarPorEstadio(string estadio)
         {
             Jogo jogo = jogoRepository.BuscarPorEstadio(estadio);
             if (jogo == null)
             {
-                return NotFound(" não há jogos nesse estadio");
+                return NotFound("Não há jogos nesse estadio");
             }
             return Ok(jogo);
-        }/*/
+        }
 
         /*[HttpGet]
         public IActionResult PlacarConfronto()
@@ -59,14 +58,24 @@ namespace WSTower.Controllers
             return Ok(jogo);
         }/*/
 
-        [HttpGet]
-        [Route("{data}")]
+        [HttpGet("Data/{data}")]
         public IActionResult BuscarPorData(DateTime data)
         {
             Jogo jogo = jogoRepository.BuscarPorData(data);
             if (jogo == null)
             {
                 return NotFound("Nesta data não há jogos");
+            }
+            return Ok(jogo);
+        }
+
+        [HttpGet("Selecao/{selecao}")]
+        public IActionResult BuscarPorSelecao(string selecao)
+        {
+            Jogo jogo = jogoRepository.BuscarPorSelecao(selecao);
+            if (jogo == null)
+            {
+                return NotFound("Está seleção não participou de jogos");
             }
             return Ok(jogo);
         }

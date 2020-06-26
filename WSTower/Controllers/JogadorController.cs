@@ -47,14 +47,13 @@ namespace WSTower.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("{nome}")]
+        [HttpGet("Nome/{nome}")]
         public IActionResult BuscarPorId(string nome)
         {
             Jogador jogador = jogadorRepository.BuscarPorNome(nome);
             if (jogador == null)
             {
-                return NotFound("Jogador nao encontrado");
+                return NotFound("Jogador não encontrado");
             }
             
             return Ok(jogador);
@@ -88,19 +87,16 @@ namespace WSTower.Controllers
             return StatusCode(202, "Jogador deletado com sucesso");
         }
 
-        /*/[HttpGet("{selecaoid}")]
-        //[Route("Jogador/{selecaoid}")]
-        
-
+        [HttpGet("Selecao/{selecaoid}")]
         public IActionResult BuscarPorSelecao(int selecaoid)
         {
             Jogador jogador = jogadorRepository.BuscarPorSelecao(selecaoid);
             if (jogador == null)
             {
-                return NotFound("Jogador nao encontrado");
+                return NotFound("Jogador não encontrado");
             }
 
             return Ok(jogador);
-        }/*/
+        }
     }
 }

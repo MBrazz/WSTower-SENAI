@@ -154,15 +154,165 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/Login",
-							"protocol": "http",
+							"raw": "{{URL}}/Login",
 							"host": [
-								"localhost"
+								"{{URL}}"
 							],
-							"port": "5000",
 							"path": [
-								"api",
 								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Jogo",
+			"item": [
+				{
+					"name": "Jogos.Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/Jogo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"SelecaoCasa\" : 1,\r\n        \"SelecaoVisitante\" : 2,\r\n        \"PlacarCasa\" : 3,\r\n        \"PlacarVisitante\" : 2,\r\n        \"Data\" : \"2019-03-29\",\r\n        \"Estadio\" : \"Morumbi\"\r\n}\r\n  \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/Jogo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.BuscarPorData",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo/Data/2018-03-29",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo",
+								"Data",
+								"2018-03-29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.BuscarPorEstadio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo/Estadio/Bernabeu",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo",
+								"Estadio",
+								"Bernabeu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.BuscarPorSelecao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo/Selecao/Brasil",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo",
+								"Selecao",
+								"Brasil"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo",
+								"1"
 							]
 						}
 					},
@@ -223,13 +373,33 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}/Jogador/Marco Reus",
+							"raw": "{{URL}}/Jogador/Nome/Marco Reus",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"Jogador",
+								"Nome",
 								"Marco Reus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogador.BuscarPorSelecao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogador/Selecao/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogador",
+								"Selecao",
+								"2"
 							]
 						}
 					},
@@ -265,120 +435,6 @@
 							"path": [
 								"Jogador",
 								"2"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Jogo",
-			"item": [
-				{
-					"name": "Jogos.Listar",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/Jogo",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"Jogo"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Jogos.Cadastrar",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "  {\r\n        \"SelecaoCasa\" : 6,\r\n        \"SelecaoVisitante\" : 7,\r\n        \"PlacarCasa\" : 3,\r\n        \"PlacarVisitante\" : 2,\r\n        \"Data\" : \"2018-03-29\",\r\n        \"Estadio\" : \"Bernabeu\"\r\n}\r\n  \r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URL}}/Jogo",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"Jogo"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Jogos.BuscarPorData",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/Jogo/2018-03-29",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"Jogo",
-								"2018-03-29"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Jogos.Atualizar",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/Jogo",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"Jogo"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Jogos.Deletar",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{URL}}/Jogo/1",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"Jogo",
-								"1"
 							]
 						}
 					},

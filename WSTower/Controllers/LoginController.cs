@@ -67,6 +67,7 @@ namespace WSTower.Controllers
 
                 return Ok(new
                 {
+                    mensagem = "Login realizado com sucesso",
                     token = new JwtSecurityTokenHandler().WriteToken(token)
                 });
             }

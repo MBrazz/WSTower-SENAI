@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,10 @@ namespace WSTower.Repositories
             using(WSTowerContext ctx = new WSTowerContext())
             {
 
-                return ctx.Jogador.Include(x => x.Selecao).ToList();
+                return ctx.Jogador
+                    .OrderBy(x => x.NumeroCamisa)
+                    .Include(x => x.Selecao)
+                    .ToList();
             }
         }
 

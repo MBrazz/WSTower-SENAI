@@ -20,9 +20,11 @@ namespace WSTower.Repositories
             using (WSTowerContext ctx = new WSTowerContext())
             {
 
-                return ctx.Jogo.Include(x => x.SelecaoCasaNavigation).Include(x => x.SelecaoVisitanteNavigation).ToList();
-
-
+                return ctx.Jogo
+                    .OrderByDescending(x => x.Data)
+                    .Include(x => x.SelecaoCasaNavigation)
+                    .Include(x => x.SelecaoVisitanteNavigation)
+                    .ToList();
 
             }
             
@@ -33,6 +35,14 @@ namespace WSTower.Repositories
             using (WSTowerContext ctx = new WSTowerContext())
             {
                 return ctx.Jogo.FirstOrDefault(x => x.Estadio == estadio);
+            }
+        }
+
+        public Jogo BuscarPorSelecao(string selecao)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                return ctx.Jogo.FirstOrDefault(x => x.SelecaoCasaNavigation.Nome == selecao || x.SelecaoVisitanteNavigation.Nome == selecao);
             }
         }
 
