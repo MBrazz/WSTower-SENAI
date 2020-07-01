@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Campeonato_App.Views.LoginView">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <!--<Label Text="Login"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" 
+                FontSize="30"
+                TextColor="Blue"
+                FontAttributes="Bold"
+                Padding="50"
+                   />-->
+
+
+            <Image
+                Source="app_logo.png"
+                WidthRequest = "180"
+                HeightRequest="180"
+                HorizontalOptions="CenterAndExpand"
+                Margin="0,130,0,0"
+                />
+            
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="350" Orientation="Horizontal">
+                
+
+                <Image Source="baseline_person_black_48dp.png" 
+                       WidthRequest="35"
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Margin="0,36,0,0"/>
+                
+                <Entry Placeholder="Usuário ou email"
+                   TextColor="Black"
+                   Margin="0,30,0,0"
+                    WidthRequest="320"
+                   />
+            </StackLayout>
+
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="350" Orientation="Horizontal">
+
+                <Image Source="baseline_lock_black_48dp.png" 
+                       WidthRequest="33"
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       Margin="0,22,0,0"/>
+
+                <Entry Placeholder="Senha" 
+                   IsPassword="True" 
+                   TextColor="Black"
+                   Margin="0,20,0,0"
+                   WidthRequest="320"
+                   ClearButtonVisibility="WhileEditing" />
+            </StackLayout>
+
+            <Button Text="Entrar" 
+                    BackgroundColor="MediumSeaGreen" 
+                    FontSize="15"
+                    TextColor="White" VerticalOptions="Center" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="130"
+                    HeightRequest="40"
+                    CornerRadius="7"
+                    Margin="0,30,0,0"/>
+
+
+            <Button Text="Cadastrar-se" 
+                    TextColor="DarkTurquoise" 
+                    BackgroundColor="Transparent"
+                    FontSize="16"
+                    Margin="0,150,0,0"/>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

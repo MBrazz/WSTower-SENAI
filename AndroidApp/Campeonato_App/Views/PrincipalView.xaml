@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Campeonato_App.Views.PrincipalView">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            
+            <!--<Label Text="Welcome to Xamarin.Forms! - Lidiane"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />-->
+
+            <StackLayout
+                Orientation="Horizontal">
+                <Image
+                Source="baseline_clear_black_18dp.png"
+                WidthRequest = "30"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Start"
+                />
+                
+            <Label
+                Text= "08/07/2020"
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                />
+            <Image
+                Source="baseline_search_black_18dp.png"
+                WidthRequest = "30"
+                HorizontalOptions="EndAndExpand"
+                />
+            </StackLayout>
+            <Image
+                BackgroundColor="Gray"
+                HeightRequest="1"
+                HorizontalOptions="FillAndExpand"
+                />
+            <!--<ListView>
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Alemanha</x:String>
+                        <x:String>Brasil</x:String>
+                        
+                    </x:Array>
+                </ListView.ItemsSource>
+            </ListView>-->
+            <ListView
+                x:Name="jogosList"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Orientation="Horizontal"
+                                >
+                                <Label
+                                    Text="{Binding selecaoCasa}"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                />
+                                <Label
+                                    Text="{Binding placarCasa}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                />
+                                <Label
+                                    Text="X"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                />
+                                <Label
+                                    Text="{Binding placarVisitante}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="CenterAndExpand"
+                                />
+                                <Label
+                                    Text="{Binding selecaoVisitante}"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                />
+                            </StackLayout>
+                           
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                    
+            </ListView>
+
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
